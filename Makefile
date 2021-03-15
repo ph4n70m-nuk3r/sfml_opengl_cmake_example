@@ -38,13 +38,11 @@ CFLAGS_REL = -c $(STD_ARGS) $(WARN_ARGS) $(REL_OPT_ARGS)
 ########################
 #       MAKE ALL       #
 ########################
-
 all: link_dbg link_rel
 
 ########################
 #     LINKER PHASE     #
 ########################
-
 link_dbg: $(BIN_DIR_DBG) shaders $(LINK_INPUTS_DBG)
 	$(CXX) $(LINK_INPUTS_DBG) $(LFLAGS_DBG)
 
@@ -54,7 +52,6 @@ link_rel: $(OBJ_DIR_REL) shaders $(LINK_INPUTS_REL)
 ############
 # DBG OBJS #
 ############
-
 $(OBJ_DIR_DBG)/main.o: $(OBJ_DIR_DBG)
 	$(CXX) $(CFLAGS_DBG) src/main.cpp -o $(OBJ_DIR_DBG)/main.o
 
@@ -67,7 +64,6 @@ $(OBJ_DIR_DBG)/game_app.o: $(OBJ_DIR_DBG)
 ############
 # REL OBJS #
 ############
-
 $(OBJ_DIR_REL)/main.o: $(OBJ_DIR_REL)
 	$(CXX) $(CFLAGS_REL) src/main.cpp -o $(OBJ_DIR_REL)/main.o
 
@@ -80,7 +76,6 @@ $(OBJ_DIR_REL)/game_app.o: $(OBJ_DIR_REL)
 #################
 # DIR STRUCTURE #
 #################
-
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
 
