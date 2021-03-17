@@ -11,5 +11,5 @@ Simple project using SFML for window + event management and OpenGL to render and
 `make`
 
 # Additional info
-https://www.khronos.org/opengl/wiki/Getting_Started#Linux
+https://www.khronos.org/opengl/wiki/Getting_Started#Linux  
 https://www.khronos.org/opengl/wiki/Platform_specifics:_Linux
