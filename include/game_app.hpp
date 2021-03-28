@@ -10,38 +10,35 @@
 #include <string>
 #include <vector>
 
-class Game_App {
+class Game_App
+	{
+	  public:
+		Game_App( ) = delete; // Disable default constructor
 
-public:
-	Game_App( ) = delete; // Disable default constructor
+		Game_App( const sf::VideoMode cSF_video_mode, const char* ccp_title, const sf::ContextSettings cSF_ContextSettings ) 
+				: m_game_wnd( cSF_video_mode, ccp_title, sf::Style::Close, cSF_ContextSettings )
+			{ }
 
-	Game_App( const sf::VideoMode cSF_video_mode, const char* ccp_title, const sf::ContextSettings cSF_ContextSettings ) 
-			: m_game_wnd( cSF_video_mode, ccp_title, sf::Style::Close, cSF_ContextSettings ) {
-	}
+		void m_init( );
 
-	void m_init( );
+		void m_run( );
 
-	void m_run( );
+		void m_render( );
 
-	void m_render( );
+		void build_shader( const GLchar *vertexPath, const GLchar *fragmentPath );
 
-	void build_shader( const GLchar *vertexPath, const GLchar *fragmentPath );
+		void use_shader( );
 
-	void use_shader( );
+		void v_push( GLfloat v );
+		
+	  private:
+		sf::Window m_game_wnd;	
 
-	void v_push( GLfloat v );
-	
-private:
-	sf::Window m_game_wnd;	
+		GLuint m_shader_prog;
 
-	GLuint m_shader_prog;
+		std::vector<GLfloat> m_vertices;
 
-	std::vector<GLfloat> m_vertices;
-
-	GLuint m_VBO, m_VAO;
-
-protected:
-	
-};
+		GLuint m_VBO, m_VAO;
+	};
 
 #endif // GAME_APP_HPP

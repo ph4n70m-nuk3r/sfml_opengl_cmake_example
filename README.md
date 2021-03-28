@@ -8,5 +8,5 @@ Simple project using SFML for window + event management and OpenGL to render and
 `g++ 9.3.0`
 
 # Build
-`make`
+`./ubuntu_build.sh`
 
